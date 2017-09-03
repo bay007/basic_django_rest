@@ -17,8 +17,20 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from mascota.urls import URL_PATTERNS
 from refugio.views import index
-urlpatterns = [
+from rest_framework import routers
+from api import views
+
+
+router = routers.DefaultRouter()
+router.register(r'persona', views.PersonaViewSet)
+
+urlpatterns = (
+    # urls for Django Rest Framework API
+    url(r'^api/v1/', include(router.urls)),
+)
+
+urlpatterns += (
     url(r'^$', index),
     url(r'^admin/', admin.site.urls),
     url(r'^mascota/', include(URL_PATTERNS)),
-]
+)
