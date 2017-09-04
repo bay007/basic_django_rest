@@ -13,6 +13,7 @@ class MascotaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mascota
         fields = '__all__'
+        depth = 1
 
 
 class VacunaSerializer(serializers.ModelSerializer):
