@@ -17,6 +17,8 @@ class PersonaViewSet(viewsets.ModelViewSet):
 class MascotaViewSet(viewsets.ModelViewSet):
     queryset = Mascota.objects.all()
     serializer_class = serializers.MascotaSerializer
+    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_fields = ('nombre', 'edad')
 
 
 class VacunaViewSet(viewsets.ModelViewSet):
