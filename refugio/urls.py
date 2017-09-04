@@ -18,13 +18,13 @@ from django.contrib import admin
 from mascota.urls import URL_PATTERNS
 from refugio.views import index
 from rest_framework import routers
-from api import views
+from api.views import (PersonaViewSet, MascotaViewSet, VacunaViewSet)
 
 
 router = routers.DefaultRouter()
-router.register(r'persona', views.PersonaViewSet)
-router.register(r'mascota', views.MascotaViewSet)
-router.register(r'vacuna', views.VacunaViewSet)
+router.register(r'persona', PersonaViewSet)
+router.register(r'mascota', MascotaViewSet)
+router.register(r'vacuna', VacunaViewSet)
 
 urlpatterns = (
     # urls for Django Rest Framework API
