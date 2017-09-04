@@ -23,6 +23,8 @@ from api import views
 
 router = routers.DefaultRouter()
 router.register(r'persona', views.PersonaViewSet)
+router.register(r'mascota', views.MascotaViewSet)
+router.register(r'vacuna', views.VacunaViewSet)
 
 urlpatterns = (
     # urls for Django Rest Framework API
@@ -32,5 +34,4 @@ urlpatterns = (
 urlpatterns += (
     url(r'^$', index),
     url(r'^admin/', admin.site.urls),
-    url(r'^mascota/', include(URL_PATTERNS)),
 )
